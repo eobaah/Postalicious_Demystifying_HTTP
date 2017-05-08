@@ -9,15 +9,15 @@ block content
         .method-dropdown.methods
           h2 Method
           form
-            select( name="http-verbs")
+            select.http-verb( name="http-verbs")
               option( value="GET")
                 | GET
-                option( value="POST")
-                  | POST
-                  option( value="PUT")
-                    | PUT
-                    option( value="DELETE")
-                      | DELETE
+              option( value="POST")
+                | POST
+              option( value="PUT")
+                | PUT
+              option( value="DELETE")
+                | DELETE
         .method-host.methods
           h2 Host
           form
@@ -34,8 +34,6 @@ block content
           .key-value-pairs
             input( type="text" name="key3" placeholder="key")
             input( type="text" name="value3" placeholder="value")
-
-            
       .headers.child-inputs
         h2 Headers
         form.form-key-value
@@ -62,12 +60,12 @@ block content
           textarea(rows="10" cols="50")
       .bottom-right
         .btm-rt-tabs
-          button.request-tab.tablinks(onclick="selectTab(event, 'request')")
+          button.tablinks(onclick="selectTab( event, 'Request' )")
             | Request
-          button.response-tab.tablinks(onclick="selectTab(event, 'response')")
+          button.tablinks(onclick="selectTab( event, 'Response' )")
             | Response
         .btm-rt-display
-          #request.tabcontent
+          #Request.tabcontent
             | This content displays the request
-          #response.tabcontent
+          #Response.tabcontent
             | This content displays the response
