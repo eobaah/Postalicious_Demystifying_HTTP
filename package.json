@@ -1,0 +1,34 @@
+{
+  "name": "postalicious",
+  "version": "1.0.0",
+  "description": "Basic clone of the postman or resteasy extensions",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eobaah/Postalicious_Demystifying_HTTP.git"
+  },
+  "author": "Keith and Eugene",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eobaah/Postalicious_Demystifying_HTTP/issues"
+  },
+  "homepage": "https://github.com/eobaah/Postalicious_Demystifying_HTTP#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.4.0",
+    "eslint": "^3.19.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "pug": "^2.0.0-rc.1",
+    "serve-favicon": "^2.4.2"
+  }
+}
