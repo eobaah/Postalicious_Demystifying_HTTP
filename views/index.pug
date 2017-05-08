@@ -1,0 +1,73 @@
+extends layout
+
+block content
+  .main-wrapper
+    .heading
+      h1 Postalicious
+    .inputs
+      .method.child-inputs
+        .method-dropdown.methods
+          h2 Method
+          form
+            select( name="http-verbs")
+              option( value="GET")
+                | GET
+                option( value="POST")
+                  | POST
+                  option( value="PUT")
+                    | PUT
+                    option( value="DELETE")
+                      | DELETE
+        .method-host.methods
+          h2 Host
+          form
+            input( type="text" name="host-name" placeholder="enter url here...")
+      .query.child-inputs
+        h2 Query Parameters
+        form.form-key-value
+          .key-value-pairs
+            input( type="text" name="key1" placeholder="key")
+            input( type="text" name="value1" placeholder="value")
+          .key-value-pairs
+            input( type="text" name="key2" placeholder="key")
+            input( type="text" name="value2" placeholder="value")
+          .key-value-pairs
+            input( type="text" name="key3" placeholder="key")
+            input( type="text" name="value3" placeholder="value")
+
+            
+      .headers.child-inputs
+        h2 Headers
+        form.form-key-value
+          .key-value-pairs
+            input( type="text" name="key4" placeholder="key")
+            input( type="text" name="value4" placeholder="value")
+          .key-value-pairs
+            input( type="text" name="key5" placeholder="key")
+            input( type="text" name="value5" placeholder="value")
+          .key-value-pairs
+            input( type="text" name="key6" placeholder="key")
+            input( type="text" name="value6" placeholder="value")
+    .buttons
+      .request-btn
+        button
+          | Build Request
+      .send-btn
+        button
+          | Build and Send
+    .bottom-section
+      .bottom-left
+        .body-section
+          h2 Body
+          textarea(rows="10" cols="50")
+      .bottom-right
+        .btm-rt-tabs
+          button.request-tab.tablinks(onclick="selectTab(event, 'request')")
+            | Request
+          button.response-tab.tablinks(onclick="selectTab(event, 'response')")
+            | Response
+        .btm-rt-display
+          #request.tabcontent
+            | This content displays the request
+          #response.tabcontent
+            | This content displays the response

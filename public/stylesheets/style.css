@@ -1,0 +1,74 @@
+.main-wrapper {
+  outline: #00FF00 dotted thin;
+  display: flex;
+  flex-direction: column;
+}
+.inputs {
+  outline: #00FF00 dotted thin;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.child-inputs {
+  outline: #ff8200 dotted thin;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+}
+.methods {
+  margin: 0 3%;
+}
+.buttons {
+  outline: blue dotted thin;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0 2%;
+}
+.bottom-section {
+  outline: #ff8200 dotted thin;
+  display: flex;
+  flex-direction: row;
+}
+
+.btm-rt-tabs {
+  outline: red dotted thin;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.bottom-left {
+  outline: red dotted thin;
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+}
+
+/* Style the tab */
+btm-rt-tabs {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.request-tab, .response-tab  {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.request-tab:hover, .response-tab:hover  {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.request-tab.active, .response-tab.active {
+    background-color: #ccc;
+}
