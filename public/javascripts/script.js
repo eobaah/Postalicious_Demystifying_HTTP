@@ -19,40 +19,46 @@ function selectTab(event, reqres) {
 function buildRequest() {
   let httpVerb = document.querySelector('.http-verb').value
   let hostInput = document.getElementById('host-url').value
-  let queryData= document.querySelectorAll('.query-data')
-  let headersData= document.querySelectorAll('.headers-data')
+  let queryData = document.querySelectorAll('.query-data')
+  let headersData = document.querySelectorAll('.headers-data')
 
-  var jsonArr = []
+  let jsonArr = []
 
   for(let x of queryData) {
     jsonArr.push(x.value)
   }
-  var jsonedObj = JSON.stringify(jsonArr)
-  console.log(jsonedObj)
+
+  for(let x of headersData) {
+    jsonArr.push(x.value)
+  }
+
+  let queryObj = {
+    [jsonArr[0]]:jsonArr[1],
+    [jsonArr[2]]:jsonArr[3],
+    [jsonArr[4]]:jsonArr[5]
+  }
+ console.log("querydata",queryObj)
+
+  let headerObj = {
+    [jsonArr[6]]:jsonArr[7],
+    [jsonArr[8]]:jsonArr[9],
+    [jsonArr[10]]:jsonArr[11]
+  }
+  console.log("header:",headerObj)
+
+
+  // populate HTTP request message body
+  var myInit = { method: 'POST',
+                 headers: JSON.stringify(headerObj),
+                 body: JSON.stringify(queryObj)
+  };
+
+  var myRequest = new Request(hostInput, myInit);
+
+  fetch(myRequest)
+    .then(function(response) {
+      return response.json();
+  }).then(function(myjson) {
+
+  });
 }
-
-// // populate with header information
-// var myHeaders = new Headers();
-// myHeaders.append("Content-Type", "text/plain");
-// myHeaders.append("Content-Length", content.length.toString());
-// myHeaders.append("X-Custom-Header", "ProcessThisImmediately");
-//
-//
-// // populate HTTP request message body
-// var myInit = { method: 'GET',
-//                headers: myHeaders,
-//                mode: 'cors',
-//                cache: 'default' };
-//
-// var myRequest = new Request('flowers.jpg', myInit);
-//
-// fetch(myRequest).then(function(response) {
-//   return response.blob();
-// }).then(function(myBlob) {
-//   var objectURL = URL.createObjectURL(myBlob);
-//   myImage.src = objectURL;
-// });
-
-// check where the data is
-// get the data from the input fields
-// construct a request object using that data
