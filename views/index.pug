@@ -47,24 +47,24 @@ block content
             input.headers-data( type="text" name="key6" placeholder="key")
             input.headers-data( type="text" name="value6" placeholder="value")
     .buttons
-      .request-btn
+      .request-btn.mainbtn
         button(onclick="buildRequest()")
           | Build Request
-      .send-btn
+      .send-btn.mainbtn
         button(onclick="finalBuild()")
           | Build and Send
-    .bottom-section
-      .bottom-left
+    .body-req-res-container
+      .body-container
         .body-section
           h2 Body
-          textarea.textBody(rows="10" cols="50" name='textarea')
-      .bottom-right
-        .btm-rt-tabs
+          textarea.textBody(rows="12" cols="57" name='textarea')
+      .req-res-container
+        .tab-btns
           button.tablinks(onclick="selectTab( event, 'Request' )")
             | Request
           button.tablinks(onclick="selectTab( event, 'Response' )")
             | Response
-        .btm-rt-display
+        .tabDisplay
           #Request.tabcontent
             |#{textBody}
           #Response.tabcontent

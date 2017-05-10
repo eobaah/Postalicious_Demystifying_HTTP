@@ -1,63 +1,126 @@
+@import url('https://fonts.googleapis.com/css?family=Cousine');
+
+body {
+  font-family: 'Cousine', monospace;
+}
+
 .main-wrapper {
-  outline: #00FF00 dotted thin;
   display: flex;
   flex-direction: column;
 }
+.heading {
+  background-color: rgb(26, 72, 96)
+}
+
+.heading h1 {
+  color: rgb(255, 255, 255);
+  margin: 2%;
+}
+
+h2 {
+  align-self: center;
+}
+
 .inputs {
-  outline: #00FF00 dotted thin;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 1% 0 0 0;
 }
 .child-inputs {
-  outline: #ff8200 dotted thin;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   display: flex;
   flex-direction: column;
-  width: 25%;
+  padding-bottom: 2%;
+  transition: 0.3s;
+  width: 33%;
 }
+
+.child-inputs:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.key-value-pairs {
+  display: flex;
+  justify-content: center;
+}
+
 .methods {
   margin: 0 3%;
 }
+
 .buttons {
-  outline: blue dotted thin;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin: 0 2%;
+  margin: 2%;
 }
-.bottom-section {
-  outline: #ff8200 dotted thin;
+
+.mainbtn {
+  border:none;
+  box-shadow: 1%;
+  margin: 0 1%;
+  text-decoration: none;
+}
+
+.request-btn {
+  background-color: rgb(10, 44, 119);
+}
+
+.send-btn {
+  background-color: rgb(6, 62, 17);
+}
+
+.send-btn button {
+  color: rgb(255, 255, 255);
+}
+
+.request-btn button {
+  color: rgb(255, 255, 255);
+}
+
+button {
+  background-image:none;
+  background-color:transparent;
+  border-style:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+
+.textBody {
+  width: 95%;
+}
+
+.body-section h2 {
+  margin: 2%;
+}
+
+.body-req-res-container {
   display: flex;
   flex-direction: row;
 }
 
-.btm-rt-tabs {
-  outline: red dotted thin;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.bottom-left {
-  outline: red dotted thin;
+.body-container {
   display: flex;
   flex-direction: column;
   width: 35%;
 }
 
 /* Style the tab */
-btm-rt-tabs {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+.tabs-btns {
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 /* Style the buttons inside the tab */
 .tablinks  {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
+    background-color: rgb(10, 44, 119);
+    border-radius: 15px 15px 0px 0px;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
@@ -65,17 +128,23 @@ btm-rt-tabs {
 
 /* Change background color of buttons on hover */
 .tablinks:hover  {
-    background-color: #ddd;
+    background-color: rgb(221, 221, 221);
 }
 
 /* Create an active/current tablink class */
 .tablinks.active {
-    background-color: #ccc;
+  background-color: rgb(197, 201, 204);
+  color: rgb(0, 0, 0);
 }
 
 .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
+  background-color: rgb(197, 201, 204);
+  border: 1px solid rgb(204, 204, 204);
+  border-top: none;
+  color: rgb(0, 0, 0);
+  height: 20%;
+  padding: 6px 12px;
+  position: absolute;
+  width: 61.7%;
+
 }
