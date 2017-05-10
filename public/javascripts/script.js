@@ -66,6 +66,7 @@ function buildRequest() {
 function finalBuild() {
   buildRequest()
   let myRequest = buildData()
+//let options = JSON.stringify( {content-type and accepts} )
 
   fetch('/request/build', {
       "Method": myRequest.Method,

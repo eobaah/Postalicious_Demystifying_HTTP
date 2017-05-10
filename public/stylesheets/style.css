@@ -13,7 +13,7 @@ body {
 }
 
 .heading h1 {
-  color: #fff;
+  color: rgb(255, 255, 255);
   margin: 2%;
 }
 
@@ -22,18 +22,18 @@ h2 {
 }
 
 .inputs {
-  margin: 1% 0 0 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin: 1% 0 0 0;
 }
 .child-inputs {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
   display: flex;
   flex-direction: column;
-  width: 33%;
   padding-bottom: 2%;
+  transition: 0.3s;
+  width: 33%;
 }
 
 .child-inputs:hover {
@@ -48,6 +48,7 @@ h2 {
 .methods {
   margin: 0 3%;
 }
+
 .buttons {
   display: flex;
   flex-direction: row;
@@ -56,10 +57,10 @@ h2 {
 }
 
 .mainbtn {
-  box-shadow: 1%;
-  text-decoration: none;
   border:none;
+  box-shadow: 1%;
   margin: 0 1%;
+  text-decoration: none;
 }
 
 .request-btn {
@@ -69,81 +70,81 @@ h2 {
 .send-btn {
   background-color: rgb(6, 62, 17);
 }
+
 .send-btn button {
-  color: white;
+  color: rgb(255, 255, 255);
 }
+
 .request-btn button {
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 button {
   background-image:none;
   background-color:transparent;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
   border-style:none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
 }
+
 .textBody {
   width: 95%;
-  /*position: absolute;*/
 }
+
 .body-section h2 {
   margin: 2%;
 }
-.bottom-section {
+
+.body-req-res-container {
   display: flex;
   flex-direction: row;
 }
 
-.btm-rt-tabs {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-.bottom-left {
+.body-container {
   display: flex;
   flex-direction: column;
   width: 35%;
 }
 
 /* Style the tab */
-.btm-rt-tabs {
-    overflow: hidden;
-    background-color: #f1f1f1;
+.tabs-btns {
+  background-color: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  overflow: hidden;
 }
 
 /* Style the buttons inside the tab */
 .tablinks  {
     background-color: rgb(10, 44, 119);
-    color: #fff;
+    border-radius: 15px 15px 0px 0px;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    border-radius: 15px 15px 0px 0px;
 }
-
 
 /* Change background color of buttons on hover */
 .tablinks:hover  {
-    background-color: #ddd;
+    background-color: rgb(221, 221, 221);
 }
 
 /* Create an active/current tablink class */
 .tablinks.active {
   background-color: rgb(197, 201, 204);
-  color: black;
+  color: rgb(0, 0, 0);
 }
 
 .tabcontent {
   background-color: rgb(197, 201, 204);
-  color: black;
+  border: 1px solid rgb(204, 204, 204);
+  border-top: none;
+  color: rgb(0, 0, 0);
   height: 20%;
-  width: 61.7%;
   padding: 6px 12px;
   position: absolute;
-  border: 1px solid #ccc;
-  border-top: none;
+  width: 61.7%;
 
 }
