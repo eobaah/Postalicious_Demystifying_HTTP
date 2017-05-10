@@ -9,9 +9,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/request/build', function(req, res) {
   let getData;
-  console.log("do we get here?", getData)
+  console.log("do we get here?")
   request(req.body.host, function(error, res, body) {
-    getData = body
+    getData = textBody
   })
   res.render('index', { textBody: JSON.stringify(getData) })
   res.redirect('/')
