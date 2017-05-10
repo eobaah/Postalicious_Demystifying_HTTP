@@ -26,26 +26,36 @@ function buildData() {
   for (let x of headersData) {
     jsonArr.push(x.value)
   }
+
   let queryParams = {
     [jsonArr[0]]: jsonArr[1],
     [jsonArr[2]]: jsonArr[3],
     [jsonArr[4]]: jsonArr[5]
   }
+
   let headerData = {
     [jsonArr[6]]: jsonArr[7],
     [jsonArr[8]]: jsonArr[9],
     [jsonArr[10]]: jsonArr[11]
   }
 
-  let jsonObj = {
-    "Method": document.querySelector('.http-verb').value,
-    "Host": document.getElementById('host-url').value,
-    "Query Parameters": queryParams,
-    "Headers": headerData,
-    "Body": document.querySelector('.textBody').value
+  if( (document.querySelector('.http-verb').value == "GET") || (document.querySelector('.http-verb').value == "DELETE")) {
+      let jsonObj = {
+      "Method": document.querySelector('.http-verb').value,
+      "Host": document.getElementById('host-url').value,
+      "Headers": headerData
+      }
+      return jsonObj
+  } else {
+      let jsonObj = {
+        "Method": document.querySelector('.http-verb').value,
+        "Host": document.getElementById('host-url').value,
+        "Query Parameters": queryParams,
+        "Headers": headerData,
+        "Body": document.querySelector('.textBody').value
+      }
+      return jsonObj
   }
-  return jsonObj
-
 }
 
 function buildRequest() {
@@ -64,6 +74,7 @@ function finalBuild() {
       "Headers": myRequest.Headers
     })
     .then(function(response) {
+      console.log( "RESPONSE======> ", response )
       if (response.status !== 200) {
         console.log('It looks like something went wrong. Status Code: ' + response.status)
         document.getElementById('Response').innerHTML = response
