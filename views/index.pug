@@ -57,7 +57,7 @@ block content
       .bottom-left
         .body-section
           h2 Body
-          textarea.textBody(rows="10" cols="50" value=`#{textBody}`)
+          textarea.textBody(rows="10" cols="50" name='textarea')
       .bottom-right
         .btm-rt-tabs
           button.tablinks(onclick="selectTab( event, 'Request' )")
@@ -66,6 +66,6 @@ block content
             | Response
         .btm-rt-display
           #Request.tabcontent
-            | This content displays the request
+            |#{textBody}
           #Response.tabcontent
             | This content displays the response
