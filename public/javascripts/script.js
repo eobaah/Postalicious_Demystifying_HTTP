@@ -41,17 +41,16 @@ function buildData() {
     "Method": document.querySelector('.http-verb').value,
     "Host": document.getElementById('host-url').value,
     "Query Parameters": queryParams,
-    "Headers": headerData
+    "Headers": headerData,
+    "Body": document.querySelector('.textBody').value
   }
   return jsonObj
 
 }
 
 function buildRequest() {
-  let incomingData = document.querySelector('.textBody')
-  return incomingData.value = JSON.stringify(buildData())
+  return document.getElementById('Request').innerHTML = JSON.stringify(buildData())
 }
-
 
 // populate HTTP request message body
 function finalBuild() {
@@ -67,6 +66,7 @@ function finalBuild() {
     .then(function(response) {
       if (response.status !== 200) {
         console.log('It looks like something went wrong. Status Code: ' + response.status)
+        document.getElementById('Response').innerHTML = response
         return
       }
       response.json().then(function(data) {})
