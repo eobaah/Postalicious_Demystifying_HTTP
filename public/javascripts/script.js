@@ -43,24 +43,33 @@ function buildData() {
     "Query Parameters": queryParams,
     "Headers": headerData
   }
-  console.log(JSON.stringify(jsonObj))
-  return JSON.stringify(jsonObj)
+  return jsonObj
+
 }
 
 function buildRequest() {
   let incomingData = document.querySelector('.textBody')
-  return incomingData.value = buildData()
+  return incomingData.value = JSON.stringify(buildData())
 }
 
 
 // populate HTTP request message body
 function finalBuild() {
+  buildRequest()
   let myRequest = buildData()
 
-  fetch('/request/build', myRequest)
+  fetch('/request/build', {
+      "Method": myRequest.Method,
+      "Host": myRequest.Host,
+      "Query Parameters": myRequest["Query Parameters"],
+      "Headers": myRequest.Headers
+    })
     .then(function(response) {
-      //return response.json();
-    }).then(function(data) {
-      console.log(data)
+      if (response.status !== 200) {
+        console.log('It looks like something went wrong. Status Code: ' + response.status)
+        return
+      }
+      response.json().then(function(data) {})
+      console.log('this has things', data)
     });
 }
