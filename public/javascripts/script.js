@@ -1,5 +1,4 @@
 function selectTab(event, reqres) {
-  console.log(event)
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
@@ -39,22 +38,22 @@ function buildData() {
     [jsonArr[10]]: jsonArr[11]
   }
 
-  if( (document.querySelector('.http-verb').value == "GET") || (document.querySelector('.http-verb').value == "DELETE")) {
-      let jsonObj = {
+  if ((document.querySelector('.http-verb').value == "GET") || (document.querySelector('.http-verb').value == "DELETE")) {
+    let jsonObj = {
       "Method": document.querySelector('.http-verb').value,
       "Host": document.getElementById('host-url').value,
       "Headers": headerData
-      }
-      return jsonObj
+    }
+    return jsonObj
   } else {
-      let jsonObj = {
-        "Method": document.querySelector('.http-verb').value,
-        "Host": document.getElementById('host-url').value,
-        "Query Parameters": queryParams,
-        "Headers": headerData,
-        "Body": document.querySelector('.textBody').value
-      }
-      return jsonObj
+    let jsonObj = {
+      "Method": document.querySelector('.http-verb').value,
+      "Host": document.getElementById('host-url').value,
+      "Query Parameters": queryParams,
+      "Headers": headerData,
+      "Body": document.querySelector('.textBody').value
+    }
+    return jsonObj
   }
 }
 
@@ -66,7 +65,7 @@ function buildRequest() {
 function finalBuild() {
   buildRequest()
   let myRequest = buildData()
-//let options = JSON.stringify( {content-type and accepts} )
+    //let options = JSON.stringify( {content-type and accepts} )
 
   fetch('/request/build', {
       "Method": myRequest.Method,
@@ -75,13 +74,11 @@ function finalBuild() {
       "Headers": myRequest.Headers
     })
     .then(function(response) {
-      console.log( "RESPONSE======> ", response )
       if (response.status !== 200) {
         console.log('It looks like something went wrong. Status Code: ' + response.status)
         document.getElementById('Response').innerHTML = response
         return
       }
       response.json().then(function(data) {})
-      console.log('this has things', data)
     });
 }
