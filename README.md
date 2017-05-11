@@ -93,7 +93,7 @@ If that all sounds like ancient Greek to you, never fear. If you take it one ste
 - [x] Repository includes a README file with basic installation and setup instructions.
 - [x] All dependencies are properly declared in `package.json`.
 - [x] All major features are added via pull requests with a clear description and concise commit messages.
-- [ ] Code uses a linter and there are no linting errors.
+- [x] Code uses a linter and there are no linting errors.
 - [x] Variables, functions, files, etc. have appropriate and meaningful names.
 - [x] Functions are small and serve a single purpose.
 - [x] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
